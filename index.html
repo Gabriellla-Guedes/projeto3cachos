@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cachos & Raízes | Cosméticos</title>
+
+  <style>
+    :root {
+      --vinho: #572c2a;
+      --vinho-escuro: #3f201f;
+      --rosa: #e9b4ad;
+      --rosa-claro: #fbefec;
+      --creme: #fffaf6;
+      --texto: #382725;
+      --verde: #7f9167;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--creme);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* BARRA SUPERIOR */
+
+    .promo {
+      background: var(--vinho-escuro);
+      color: white;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    /* MENU */
+
+    header {
+      background: rgba(255, 250, 246, 0.97);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #572c2a10;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--vinho);
+      border-radius: 50%;
+      font-size: 25px;
+    }
+
+    .brand-name {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: #a64d48;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search {
+      width: 175px;
+      border: 1px solid #d8b7b1;
+      border-radius: 22px;
+      padding: 9px 13px;
+      background: white;
+      min-width: 0;
+    }
+
+    .cart-btn,
+    .menu-btn {
+      border: 0;
+      border-radius: 24px;
+      background: var(--vinho);
+      color: white;
+      padding: 10px 14px;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(110deg, #f0c1b7, #d99b90);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 5%;
+      min-height: 390px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.03;
+      margin: 15px 0;
+      max-width: 550px;
+    }
+
+    .hero p {
+      max-width: 440px;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      border-radius: 25px;
+      padding: 14px 22px;
+      background: var(--vinho);
+      color: white;
+      font-weight: 700;
+      margin-top: 12px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--vinho-escuro);
+      transform: translateY(-2px);
+    }
+
+    .hero-photo {
+      min-height: 300px;
+      border-radius: 48% 48% 18px 18px;
+      background: linear-gradient(145deg, #b26b60, #f4d0c5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .hero-note {
+      position: absolute;
+      bottom: 20px;
+      left: 18px;
+      background: #fff8f0e8;
+      padding: 10px 15px;
+      border-radius: 18px;
+      font-family: Georgia, serif;
+      font-style: italic;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 54px 5%;
+    }
+
+    .section-head {
+      text-align: center;
+      margin: 0 auto 28px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(27px, 3vw, 36px);
+      margin: 0 0 8px;
+      color: var(--vinho);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: #776765;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* CATEGORIAS */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .category {
+      min-height: 165px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: end;
+      background: #dfaaa3;
+    }
+
+    .category:nth-child(2) {
+      background: #d78d7b;
+    }
+
+    .category:nth-child(3) {
+      background: #eab85e;
+    }
+
+    .category:nth-child(4) {
+      background: #8b9b70;
+    }
+
+    .category:nth-child(5) {
+      background: #b68ac0;
+    }
+
+    .category img {
+      width: 100%;
+      height: 165px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .category:hover img {
+      transform: scale(1.05);
+    }
+
+    .category span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 13px;
+      color: white;
+      font-weight: 700;
+      background: linear-gradient(transparent, #3f201fb8);
+    }
+
+    /* PRODUTOS */
+
+    .products-section {
+      background: linear-gradient(#fbefec, #f8e8e4);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .product {
+      background: #fffaf7;
+      border: 1px solid #f1e4df;
+      border-radius: 12px;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-img {
+      height: 175px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f4e7df;
+      display: grid;
+      place-items: center;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      font: 700 15px/1.3 Arial, sans-serif;
+      margin: 14px 0 7px;
+    }
+
+    .product p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #716563;
+      margin: 0 0 12px;
+      flex: 1;
+    }
+
+    .price {
+      font-weight: 700;
+      margin: 8px 0;
+    }
+
+    .add {
+      width: 100%;
+      border: 0;
+      border-radius: 20px;
+      background: var(--vinho);
+      color: white;
+      padding: 11px 7px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .add:hover {
+      background: var(--vinho-escuro);
+    }
+
+    /* BENEFÍCIOS */
+
+    .benefits {
+      background: var(--vinho);
+      color: #fff5ef;
+    }
+
+    .benefits .section-head h2 {
+      color: white;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .benefit-icon {
+      border: 1px solid #e7b8af;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      margin: auto auto 12px;
+      font-size: 25px;
+    }
+
+    .benefit-grid h3 {
+      font-size: 17px;
+      margin: 8px 0;
+    }
+
+    .benefit-grid p {
+      color: #f0d8d1;
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: 210px;
+      margin: auto;
+    }
+
+    /* DICAS */
+
+    .tips {
+      background: #fffaf6;
+    }
+
+    .tip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tip {
+      border-radius: 14px;
+      padding: 24px;
+      background: var(--rosa-claro);
+      border: 1px solid #f1ded8;
+    }
+
+    .tip .emoji {
+      font-size: 28px;
+    }
+
+    .tip h3 {
+      color: var(--vinho);
+      margin: 12px 0 8px;
+    }
+
+    .tip p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #6f5c58;
+    }
+
+    /* AVALIAÇÕES */
+
+    .reviews {
+      background: #f8eae6;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .review {
+      background: #fffaf7;
+      border-radius: 13px;
+      padding: 22px;
+    }
+
+    .stars {
+      color: #ee9d2f;
+      letter-spacing: 2px;
+      margin: 8px 0;
+    }
+
+    .review p {
+      line-height: 1.6;
+      font-size: 14px;
+      color: #665553;
+    }
+
+    .review strong {
+      font-size: 13px;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter {
+      text-align: center;
+      background: #e8b5ac;
+    }
+
+    .newsletter h2 {
+      color: var(--vinho);
+      margin-top: 0;
+    }
+
+    .newsletter p {
+      color: #5d3b37;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 460px;
+      margin: 20px auto 0;
+      gap: 8px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 13px 16px;
+      border: 1px solid #d5a29a;
+      border-radius: 24px;
+      background: white;
+    }
+
+    .newsletter-form button {
+      margin: 0;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: var(--vinho-escuro);
+      color: #f8e8e2;
+      padding: 36px 5% 22px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1fr;
+      gap: 25px;
+    }
+
+    footer h3 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    footer p,
+    footer a {
+      font-size: 12px;
+      line-height: 1.9;
+      color: #e7cbc4;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 5px;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #704744;
+      margin: 25px auto 0;
+      padding-top: 17px;
+      font-size: 11px;
+      color: #d9b7b0;
+    }
+
+    /* AVISO */
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2e2422;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 30px;
+      box-shadow: 0 8px 25px #0003;
+      display: none;
+      z-index: 20;
+      font-size: 14px;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .search {
+        width: 130px;
+      }
+
+      .categories,
+      .products {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .product-img {
+        height: 190px;
+      }
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 700px) {
+
+      .promo {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .brand-name {
+        font-size: 21px;
+      }
+
+      .menu-btn {
+        display: inline-block;
+      }
+
+      .nav-links {
+        display: none;
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        padding: 12px 0 5px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+      }
+
+      .search {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 40px;
+        gap: 20px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-photo {
+        min-height: 260px;
+        max-width: 450px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .hero-photo img {
+        height: 300px;
+      }
+
+      section {
+        padding: 42px 5%;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category,
+      .category img {
+        min-height: 145px;
+        height: 145px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-img {
+        height: 155px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+      }
+
+      .tip-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 390px) {
+
+      .brand-mark {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .cart-btn {
+        padding: 9px 10px;
+        font-size: 12px;
+      }
+
+      .categories,
+      .products {
+        gap: 9px;
+      }
+
+      .product {
+        padding: 9px;
+      }
+
+      .product-img {
+        height: 130px;
+      }
+
+      .product h3 {
+        font-size: 13px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR -->
+
+  <div class="promo">
+    <span>🚚 Frete grátis em compras acima de R$ 199</span>
+    <span>♡ Beleza real, cabelos reais</span>
+    <span>🌿 Cuidado com carinho, da raiz às pontas</span>
+  </div>
+
+  <!-- MENU -->
+
+  <header>
+    <nav class="nav">
+
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">❦</span>
+
+        <span>
+          <span class="brand-name">
+            Cachos &amp; Raízes
+          </span>
+
+          <small>
+            CUIDADO QUE VALORIZA VOCÊ
+          </small>
+        </span>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-expanded="false">
+        ☰ Menu
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <div class="nav-actions">
+
+        <input
+          class="search"
+          id="search"
+          type="search"
+          placeholder="Buscar produtos..."
+          aria-label="Buscar produtos">
+
+        <button class="cart-btn" id="cartBtn">
+          🛍 Carrinho (<span id="cartCount">0</span>)
+        </button>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-inner">
+
+        <div>
+
+          <div class="eyebrow">
+            Cosméticos feitos para você
+          </div>
+
+          <h1>
+            Cabelos cacheados
+            <br>
+            e crespos
+          </h1>
+
+          <p>
+            Hidratação, definição e muito mais!
+            Descubra uma linha de cuidados pensada
+            para realçar a beleza única dos seus
+            cachos e crespos.
+          </p>
+
+          <a class="btn" href="#produtos">
+            Conheça nossa linha →
+          </a>
+
+        </div>
+
+        <div class="hero-photo">
+
+          <img
+            src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=85"
+            alt="Mulher negra com cabelo natural e cacheado">
+
+          <div class="hero-note">
+            Seus cachos, seu poder! ♡
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CATEGORIAS -->
+
+    <section id="categorias">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>
+            Nossas categorias
+          </h2>
+
+          <p>
+            Encontre o cuidado ideal para o seu tipo de cacho ou crespo.
+          </p>
+
+        </div>
+
+        <div class="categories">
+
+          <a class="category" href="#produtos">
+
+            <img
+              src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
+              alt="Produtos para cabelo">
+
+            <span>
+              Shampoos →
+            </span>
+
+          </a>
+
+          <a class="category" href="#produtos">
+
+            <img
+              src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=500&q=80"
+              alt="Creme cosmético">
+
+            <span>
+              Condicionadores →
+            </span>
+
+          </a>
+
+          <a class="category" href="#produtos">
+
+            <img
+              src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80"
+              alt="Máscara de tratamento">
+
+            <span>
+              Máscaras →
+            </span>
+
+          </a>
+
+          <a class="category" href="#produtos">
+
+            <img
+              src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
+              alt="Finalizadores para cabelos">
+
+            <span>
+              Finalizadores →
+            </span>
+
+          </a>
+
+          <a class="category" href="#produtos">
+
+            <img
+              src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80"
+              alt="Óleos para tratamento capilar">
+
+            <span>
+              Óleos e tratamentos →
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PRODUTOS -->
+
+    <section
+      class="products-section"
+      id="produtos">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>
+            Produtos em destaque
+          </h2>
+
+          <p>
+            Os queridinhos de quem ama cuidar dos cachos e crespos!
+          </p>
+
+        </div>
+
+        <div class="products" id="productGrid">
+
+          <!-- PRODUTO 1 -->
+
+          <article
+            class="product"
+            data-name="shampoo hidratante">
+
+            <div class="product-img">
+
+              <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
+                alt="Frasco de shampoo cosmético">
+
+            </div>
+
+            <h3>
+              Shampoo Hidratante
+            </h3>
+
+            <p>
+              Limpeza suave sem ressecar,
+              para fios macios e cheios de vida.
+            </p>
+
+            <div class="price">
+              R$ 34,90
+            </div>
+
+            <button
+              class="add"
+              data-product="Shampoo Hidratante"
+              data-price="34.90">
+
+              Adicionar ao carrinho
+
+            </button>
+
+          </article>
+
+          <!-- PRODUTO 2 -->
+
+          <article
+            class="product"
+            data-name="máscara de nutrição">
+
+            <div class="product-img">
+
+              <img
+                src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=500&q=80"
+                alt="Pote de máscara de nutrição">
+
+            </div>
+
+            <h3>
+              Máscara de Nutrição Intensa
+            </h3>
+
+            <p>
+              Ajuda a reduzir o ressecamento
+              e deixa os fios mais sedosos.
+            </p>
+
+            <div class="price">
+              R$ 42,90
+            </div>
+
+            <button
+              class="add"
+              data-product="Máscara de Nutrição Intensa"
+              data-price="42.90">
+
+              Adicionar ao carrinho
+
+            </button>
+
+          </article>
+
+          <!-- PRODUTO 3 -->
+
+          <article
+            class="product"
+            data-name="creme de pentear">
+
+            <div class="product-img">
+
+              <img
+                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80"
+                alt="Produto cosmético para cabelos">
+
+            </div>
+
+            <h3>
+              Creme de Pentear Definição
+            </h3>
+
+            <p>
+              Ajuda a definir os cachos,
+              controlar o frizz e facilitar o desembaraço.
+            </p>
+
+            <div class="price">
+              R$ 37,90
+            </div>
+
+            <button
+              class="add"
+              data-product="Creme de Pentear Definição"
+              data-price="37.90">
+
+              Adicionar ao carrinho
+
+            </button>
+
+          </article>
+
+          <!-- PRODUTO 4 -->
+
+          <article
+            class="product"
+            data-name="óleo capilar">
+
+            <div class="product-img">
+
+              <img
+                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80"
+                alt="Óleo cosmético em frasco">
+
+            </div>
+
+            <h3>
+              Óleo Capilar Nutrição
+            </h3>
+
+            <p>
+              Um toque de brilho e maciez
+              para complementar sua rotina capilar.
+            </p>
+
+            <div class="price">
+              R$ 29,90
+            </div>
+
+            <button
+              class="add"
+              data-product="Óleo Capilar Nutrição"
+              data-price="29.90">
+
+              Adicionar ao carrinho
+
+            </button>
+
+          </article>
+
+          <!-- PRODUTO 5 -->
+
+          <article
+            class="product"
+            data-name="ativador de cachos">
+
+            <div class="product-img">
+
+              <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
+                alt="Frasco de finalizador capilar">
+
+            </div>
+
+            <h3>
+              Ativador de Cachos
+            </h3>
+
+            <p>
+              Valoriza o formato natural dos fios
+              e dá mais movimento ao penteado.
+            </p>
+
+            <div class="price">
+              R$ 32,90
+            </div>
+
+            <button
+              class="add"
+              data-product="Ativador de Cachos"
+              data-price="32.90">
+
+              Adicionar ao carrinho
+
+            </button>
+
+          </article>
+
+        </div>
+
+        <p
+          id="noResults"
+          style="display:none;text-align:center;padding:25px;">
+
+          Nenhum produto encontrado.
+          Tente outra busca.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- BENEFÍCIOS -->
+
+    <section class="benefits">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>
+            Por que escolher a Cachos &amp; Raízes?
+          </h2>
+
+          <p>
+            Uma rotina de carinho para todos os tipos de curvatura.
+          </p>
+
+        </div>
+
+        <div class="benefit-grid">
+
+          <div>
+
+            <div class="benefit-icon">
+              🌿
+            </div>
+
+            <h3>
+              Cuidado consciente
+            </h3>
+
+            <p>
+              Fórmulas pensadas para uma
+              rotina capilar cuidadosa.
+            </p>
+
+          </div>
+
+          <div>
+
+            <div class="benefit-icon">
+              ♡
+            </div>
+
+            <h3>
+              Para vários cachos
+            </h3>
+
+            <p>
+              Opções para cabelos ondulados,
+              cacheados e crespos.
+            </p>
+
+          </div>
+
+          <div>
+
+            <div class="benefit-icon">
+              ✧
+            </div>
+
+            <h3>
+              Beleza natural
+            </h3>
+
+            <p>
+              Valorize a textura natural
+              dos seus fios.
+            </p>
+
+          </div>
+
+          <div>
+
+            <div class="benefit-icon">
+              🚚
+            </div>
+
+            <h3>
+              Entrega para o Brasil
+            </h3>
+
+            <p>
+              Seu cuidado favorito chegando
+              até você.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- DICAS -->
+
+    <section
+      class="tips"
+      id="dicas">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>
+            Seu momento de cuidar
+          </h2>
+
+          <p>
+            Dicas simples para deixar sua rotina capilar ainda melhor.
+          </p>
+
+        </div>
+
+        <div class="tip-grid">
+
+          <article class="tip">
+
+            <div class="emoji">
+              💧
+            </div>
+
+            <h3>
+              Hidratação em dia
+            </h3>
+
+            <p>
+              Inclua uma máscara adequada ao seu cabelo
+              na rotina e siga o tempo de pausa indicado
+              na embalagem.
+            </p>
+
+          </article>
+
+          <article class="tip">
+
+            <div class="emoji">
+              🪮
+            </div>
+
+            <h3>
+              Desembarace com carinho
+            </h3>
+
+            <p>
+              Divida o cabelo em mechas e desembarace
+              com cuidado, preferencialmente com os fios
+              úmidos e condicionados.
+            </p>
+
+          </article>
+
+          <article class="tip">
+
+            <div class="emoji">
+              🌙
+            </div>
+
+            <h3>
+              Proteja seus cachos
+            </h3>
+
+            <p>
+              Uma fronha ou touca de cetim pode ajudar
+              a diminuir o atrito durante a noite.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- AVALIAÇÕES -->
+
+    <section class="reviews">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>
+            O que dizem sobre nós
+          </h2>
+
+          <p>
+            Carinho que começa na rotina e aparece nos detalhes.
+          </p>
+
+        </div>
+
+        <div class="review-grid">
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "Meu cabelo ficou muito macio e o creme
+              ajudou bastante na definição dos meus cachos!"
+            </p>
+
+            <strong>
+              — Juliana S.
+            </strong>
+
+          </article>
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "Adorei encontrar produtos pensados
+              para a minha curvatura."
+            </p>
+
+            <strong>
+              — Beatriz L.
+            </strong>
+
+          </article>
+
+          <article class="review">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "O óleo dá um brilho lindo nas pontas.
+              Já entrou para os meus favoritos."
+            </p>
+
+            <strong>
+              — Camila R.
+            </strong>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter">
+
+      <div class="container">
+
+        <h2>
+          Um carinho a mais para seus cachos ♡
+        </h2>
+
+        <p>
+          Cadastre seu e-mail para receber novidades,
+          dicas e ofertas especiais.
+        </p>
+
+        <form
+          class="newsletter-form"
+          id="newsletterForm">
+
+          <input
+            type="email"
+            placeholder="Seu melhor e-mail"
+            required>
+
+          <button
+            class="btn"
+            type="submit">
+
+            Quero receber
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer id="contato">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <a class="brand" href="#inicio">
+
+          <span
+            class="brand-mark"
+            style="border-color:#f8e8e2">
+
+            ❦
+
+          </span>
+
+          <span>
+
+            <span
+              class="brand-name"
+              style="font-size:22px">
+
+              Cachos &amp; Raízes
+
+            </span>
+
+            <small>
+              CUIDADO QUE VALORIZA VOCÊ
+            </small>
+
+          </span>
+
+        </a>
+
+        <p>
+          Celebrando a beleza natural de cada curvatura,
+          com cuidado, carinho e autoestima.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3>
+          Links úteis
+        </h3>
+
+        <div class="footer-links">
+
+          <a href="#inicio">
+            Início
+          </a>
+
+          <a href="#produtos">
+            Produtos
+          </a>
+
+          <a href="#dicas">
+            Dicas de cuidado
+          </a>
+
+          <a href="#contato">
+            Contato
+          </a>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <h3>
+          Atendimento
+        </h3>
+
+        <p>
+          ✉ contato@cachoserraizes.com.br
+          <br>
+          ☎ (11) 98765-4321
+          <br>
+          ◷ Seg a Sex · 9h às 18h
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3>
+          Redes sociais
+        </h3>
+
+        <p>
+          Instagram　 TikTok
+          <br>
+          Pinterest　 YouTube
+        </p>
+
+        <p>
+          Compartilhe seu momento de cuidado!
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Cachos &amp; Raízes.
+      Projeto demonstrativo — todos os direitos reservados.
+    </div>
+
+  </footer>
+
+  <div
+    class="toast"
+    id="toast"
+    role="status">
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const cart = [];
+
+    const cartCount =
+      document.getElementById("cartCount");
+
+    const toast =
+      document.getElementById("toast");
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      toast.textContent = message;
+
+      toast.style.display = "block";
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+
+        toast.style.display = "none";
+
+      }, 2600);
+
+    }
+
+    /* ADICIONAR AO CARRINHO */
+
+    document.querySelectorAll(".add").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        cart.push({
+
+          name: button.dataset.product,
+
+          price: Number(button.dataset.price)
+
+        });
+
+        cartCount.textContent = cart.length;
+
+        showToast(
+          button.dataset.product +
+          " adicionado ao carrinho!"
+        );
+
+      });
+
+    });
+
+    /* CARRINHO */
+
+    document
+      .getElementById("cartBtn")
+      .addEventListener("click", () => {
+
+        if (!cart.length) {
+
+          showToast(
+            "Seu carrinho está vazio por enquanto."
+          );
+
+          return;
+        }
+
+        const total = cart.reduce(
+          (sum, item) =>
+            sum + item.price,
+          0
+        );
+
+        const items = cart
+          .map(
+            item =>
+              "• " +
+              item.name +
+              " — R$ " +
+              item.price
+                .toFixed(2)
+                .replace(".", ",")
+          )
+          .join("\n");
+
+        alert(
+          "Seu carrinho:\n\n" +
+          items +
+          "\n\nTotal: R$ " +
+          total
+            .toFixed(2)
+            .replace(".", ",") +
+          "\n\nEsta é uma demonstração; o pagamento ainda não está conectado."
+        );
+
+      });
+
+    /* BUSCA */
+
+    document
+      .getElementById("search")
+      .addEventListener("input", event => {
+
+        const query =
+          event.target.value
+            .toLocaleLowerCase("pt-BR")
+            .trim();
+
+        let visible = 0;
+
+        document
+          .querySelectorAll(".product")
+          .forEach(product => {
+
+            const match =
+              product.dataset.name.includes(query) ||
+              product.textContent
+                .toLocaleLowerCase("pt-BR")
+                .includes(query);
+
+            product.style.display =
+              match ? "flex" : "none";
+
+            if (match) {
+              visible++;
+            }
+
+          });
+
+        document.getElementById(
+          "noResults"
+        ).style.display =
+          visible ? "none" : "block";
+
+      });
+
+    /* MENU MOBILE */
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+      const open =
+        navLinks.classList.toggle("open");
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+    });
+
+    navLinks
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+    /* NEWSLETTER */
+
+    document
+      .getElementById("newsletterForm")
+      .addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        showToast(
+          "Obrigada! O cadastro é demonstrativo neste site."
+        );
+
+        event.target.reset();
+
+      });
+
+  </script>
+
+</body>
+</html>
